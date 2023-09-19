@@ -11,19 +11,14 @@ export function Home() {
     const [modalVisible, setModalVisible] = useState(false)
 
     function generatePassword() {
-
         let password = "";
 
         for (let i = 0, n = charset.length; i < size; i++) {
             password += charset.charAt(Math.floor(Math.random() * n))
         }
-
         setPasswordValue(password)
         setModalVisible(true);
-
     }
-
-
 
     return (
         <View style={styles.container}>
