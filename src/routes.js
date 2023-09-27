@@ -2,7 +2,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { TouchableOpacity, StyleSheet, Text, View, BackHandler } from 'react-native'
 import { Home } from './pages/home'
 import { Passwords } from './pages/passwords'
-import { List } from './pages/listSenhas'
+import { List } from './pages/listPasswords'
 import { Ionicons } from '@expo/vector-icons'
 
 

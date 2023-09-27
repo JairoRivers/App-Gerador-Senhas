@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity, Pressable } from "react-native"
+import { View, Text, StyleSheet, TouchableOpacity, Pressable, Alert } from "react-native"
 import * as Clipboard from 'expo-clipboard'
 import useStorage from '../../hocks/useStorage'
 
@@ -11,7 +11,10 @@ export function ModalPassword({ password, handleClose }) {
         await Clipboard.setStringAsync(password)
         await saveItem("@pass", password)
 
-        alert("Senha copiada e salvada com sucesso!")
+        Alert.alert(
+            'Aviso',
+            'Senha copiada e salva com sucesso!'
+        )
         handleClose();
     }
 
@@ -47,8 +50,6 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
-
-
     },
     content: {
         backgroundColor: "#fff",

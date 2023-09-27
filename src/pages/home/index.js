@@ -2,11 +2,12 @@ import { useState } from 'react'
 import { StyleSheet, Text, View, Image, TouchableOpacity, Modal } from 'react-native';
 import Slider from '@react-native-community/slider'
 import { ModalPassword } from '../../components/modal'
+import styles from '../../estilos/styles';
 
 let charset = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789!@#"
 
 export function Home() {
-    const [size, setSize] = useState(10)
+    const [size, setSize] = useState(8)
     const [passwordValue, setPasswordValue] = useState("")
     const [modalVisible, setModalVisible] = useState(false)
 
@@ -27,13 +28,13 @@ export function Home() {
                 style={styles.logo}
 
             />
-            <Text style={styles.title}> Senha de {size} caracteres </Text>
+            <Text style={styles.titleG}> Senha de {size} caracteres </Text>
 
             <View style={styles.area}>
                 <Slider
                     style={{ height: 50 }}
                     minimumValue={6}
-                    maximumValue={20}
+                    maximumValue={10}
                     maximumTrackTintColor="#ff0000"
                     minimumTrackTintColor="#000"
                     thumbTintColor="#000"
@@ -44,8 +45,8 @@ export function Home() {
 
             </View>
 
-            <TouchableOpacity style={styles.button} onPress={generatePassword}>
-                <Text style={styles.buttonText}>Gerar senha</Text>
+            <TouchableOpacity style={styles.buttonG} onPress={generatePassword}>
+                <Text style={styles.buttonTextG}>Gerar senha</Text>
             </TouchableOpacity>
 
 
@@ -56,41 +57,3 @@ export function Home() {
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1, // Tentar preecher a tela
-        backgroundColor: '#FFF',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    logo: {
-        marginBottom: 30,
-        width: 200,
-        height: 200
-    },
-    area: {
-        marginTop: 14,
-        marginBottom: 14,
-        width: "80%",
-        borderRadius: 8,
-        padding: 8,
-    },
-    title: {
-        fontSize: 25,
-        fontWeight: 'bold',
-        marginTop: -20,
-    },
-    button: {
-        backgroundColor: "#000",
-        width: "80%",
-        height: 50,
-        alignItems: "center",
-        justifyContent: "center",
-        borderRadius: 8,
-    },
-    buttonText: {
-        color: "#fff",
-        fontSize: 20,
-    }
-});

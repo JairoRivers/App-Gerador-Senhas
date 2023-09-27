@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { View, StyleSheet, TextInput, TouchableOpacity, Text } from 'react-native';
+import { View, StyleSheet, TextInput, TouchableOpacity, Text, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native'
 import { Routes } from './src/routes'
-
+import styles from './src/estilos/styles';
 
 export default function App() {
   const [username, setUsername] = useState('');
@@ -25,54 +25,32 @@ export default function App() {
           <Routes />
         </NavigationContainer>
       ) : (
-        <View style={styles.logins}>
-          <TextInput
-            placeholder="Nome de usuário"
-            value={username}
-            onChangeText={(text) => setUsername(text)}
-            style={styles.loginText}
+        <View style={{ flex: 1 }}>
+          <Image
+            source={require("./src/assets/padlock.png")}
+            style={styles.logoInicial}
           />
-          <TextInput
-            placeholder="Senha"
-            value={password}
-            onChangeText={(text) => setPassword(text)}
-            secureTextEntry
-            style={styles.loginText}
-          />
-          <TouchableOpacity style={styles.button} onPress={handleLogin}>
-            <Text style={styles.buttonText}>Entrar</Text>
-          </TouchableOpacity>
+          <View style={styles.logins}>
+            <TextInput
+              placeholder="Nome de usuário"
+              value={username}
+              onChangeText={(text) => setUsername(text)}
+              style={styles.loginText}
+            />
+            <TextInput
+              placeholder="Senha"
+              value={password}
+              onChangeText={(text) => setPassword(text)}
+              secureTextEntry
+              style={styles.loginText}
+            />
+            <TouchableOpacity style={styles.buttonEntrar} onPress={handleLogin}>
+              <Text style={styles.buttonTextEntrar}>Entrar</Text>
+            </TouchableOpacity>
+          </View>
+
         </View>
       )}
     </View>
   );
 };
-const styles = StyleSheet.create({
-  pages: {
-    flex: 1
-  },
-  logins: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 100
-  },
-  loginText: {
-    marginBottom: 20,
-    padding: 10,
-    width: 200,
-    borderWidth: 1,
-  },
-  button: {
-    backgroundColor: "#000",
-    width: 200,
-    height: 50,
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: 8,
-  },
-  buttonText: {
-    color: "#fff",
-    fontSize: 16
-  }
-});
