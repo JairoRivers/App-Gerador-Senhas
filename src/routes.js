@@ -5,21 +5,11 @@ import { Passwords } from './pages/passwords'
 import { List } from './pages/listPasswords'
 import { Ionicons } from '@expo/vector-icons'
 
-
 const Tab = createBottomTabNavigator();
 
-/* const exit = () => {
-    BackHandler.exitApp();
-}; */
-
 export function Routes() {
-
     return (
-        <View style={styles.content}>
-            {/* <TouchableOpacity style={styles.button} onPress={exit}>
-                <Text style={styles.buttonText}>Sair do APP</Text>
-            </TouchableOpacity> */}
-
+        <View style={{ flex: 1 }}>
             <Tab.Navigator>
                 <Tab.Screen
                     name="home"
@@ -64,23 +54,6 @@ export function Routes() {
                     }}
                 />
             </Tab.Navigator>
-
         </View>
     )
 }
-
-const styles = StyleSheet.create({
-    content: {
-        flex: 1,
-    },
-    button: {
-        width: 100,
-        height: 50,
-        alignItems: "center",
-        marginTop: 30,
-        marginLeft: 10
-    },
-    buttonText: {
-        fontSize: 16
-    }
-});
