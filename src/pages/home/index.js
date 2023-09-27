@@ -23,11 +23,11 @@ export function Home() {
     return (
         <View style={styles.container}>
             <Image
-                source={require("../../assets/logo.png")}
+                source={require("../../assets/padlock.png")}
                 style={styles.logo}
 
             />
-            <Text style={styles.title}> {size} caracteres </Text>
+            <Text style={styles.title}> Senha de {size} caracteres </Text>
 
             <View style={styles.area}>
                 <Slider
@@ -36,7 +36,7 @@ export function Home() {
                     maximumValue={20}
                     maximumTrackTintColor="#ff0000"
                     minimumTrackTintColor="#000"
-                    thumbTintColor="#392de9"
+                    thumbTintColor="#000"
                     value={size}
                     onValueChange={(value) => setSize(value.toFixed(0))}
 
@@ -45,14 +45,12 @@ export function Home() {
             </View>
 
             <TouchableOpacity style={styles.button} onPress={generatePassword}>
-
                 <Text style={styles.buttonText}>Gerar senha</Text>
             </TouchableOpacity>
 
 
             <Modal visible={modalVisible} animationType="fade" transparent={true}>
                 <ModalPassword password={passwordValue} handleClose={() => setModalVisible(false)} />
-
             </Modal>
 
         </View>
@@ -68,7 +66,8 @@ const styles = StyleSheet.create({
     },
     logo: {
         marginBottom: 30,
-
+        width: 200,
+        height: 200
     },
     area: {
         marginTop: 14,
@@ -83,7 +82,7 @@ const styles = StyleSheet.create({
         marginTop: -20,
     },
     button: {
-        backgroundColor: "#392de9",
+        backgroundColor: "#000",
         width: "80%",
         height: 50,
         alignItems: "center",
@@ -94,5 +93,4 @@ const styles = StyleSheet.create({
         color: "#fff",
         fontSize: 20,
     }
-
 });

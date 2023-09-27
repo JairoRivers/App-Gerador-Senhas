@@ -11,7 +11,7 @@ export function ModalPassword({ password, handleClose }) {
         await Clipboard.setStringAsync(password)
         await saveItem("@pass", password)
 
-        alert("Senha copiada com sucesso!")
+        alert("Senha copiada e salvada com sucesso!")
         handleClose();
     }
 

@@ -1,12 +1,78 @@
+import { useState } from 'react';
+import { View, StyleSheet, TextInput, TouchableOpacity, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native'
 import { Routes } from './src/routes'
 
+
 export default function App() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  // Implementar autentificação no futuro
+  const handleLogin = () => {
+    if (username === '' && password === '') { //Retirei senha padrão para testes
+      setIsLoggedIn(true);
+    } else {
+      alert('Nome de usuário ou senha incorretos');
+    }
+  };
 
   return (
-    <NavigationContainer>
-      <Routes />
-    </NavigationContainer>
-  )
-}
-
+    <View style={styles.pages}>
+      {isLoggedIn ? (
+        <NavigationContainer>
+          <Routes />
+        </NavigationContainer>
+      ) : (
+        <View style={styles.logins}>
+          <TextInput
+            placeholder="Nome de usuário"
+            value={username}
+            onChangeText={(text) => setUsername(text)}
+            style={styles.loginText}
+          />
+          <TextInput
+            placeholder="Senha"
+            value={password}
+            onChangeText={(text) => setPassword(text)}
+            secureTextEntry
+            style={styles.loginText}
+          />
+          <TouchableOpacity style={styles.button} onPress={handleLogin}>
+            <Text style={styles.buttonText}>Entrar</Text>
+          </TouchableOpacity>
+        </View>
+      )}
+    </View>
+  );
+};
+const styles = StyleSheet.create({
+  pages: {
+    flex: 1
+  },
+  logins: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 100
+  },
+  loginText: {
+    marginBottom: 20,
+    padding: 10,
+    width: 200,
+    borderWidth: 1,
+  },
+  button: {
+    backgroundColor: "#000",
+    width: 200,
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 8,
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 16
+  }
+});
