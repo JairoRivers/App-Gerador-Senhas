@@ -98,7 +98,7 @@ export function List(index) {
             </View>
             <View style={{ flex: 1 }}>
                 <TouchableOpacity style={styles.buttonSave} onPress={save}>
-                    <Text style={styles.buttonTextSave}>Salvar</Text>
+                    <Text style={styles.buttonTextSave}>Adicionar</Text>
                 </TouchableOpacity>
             </View>
 

@@ -132,7 +132,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         width: "50%",
         lineHeight: 30,
-
     },
     bottonExcluir: {
         backgroundColor: 'red',
