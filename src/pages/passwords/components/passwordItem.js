@@ -7,8 +7,6 @@ export function PasswordItem({ data, removePassword }) {
             <Text style={styles.text}>{data} </Text>
 
         </Pressable>
-
-
     );
 }
 
@@ -26,6 +24,4 @@ const styles = StyleSheet.create({
     text: {
         color: "#fff",
     }
-
-
 })

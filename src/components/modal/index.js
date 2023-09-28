@@ -6,7 +6,6 @@ export function ModalPassword({ password, handleClose }) {
 
     const { saveItem } = useStorage();
 
-
     async function handleCopyPassword() {
         await Clipboard.setStringAsync(password)
         await saveItem("@pass", password)
@@ -17,7 +16,6 @@ export function ModalPassword({ password, handleClose }) {
         )
         handleClose();
     }
-
 
     return (
         <View style={styles.container}>
@@ -100,9 +98,4 @@ const styles = StyleSheet.create({
         color: "#fff",
         fontWeight: "bold"
     }
-
-
-
-
-
 })

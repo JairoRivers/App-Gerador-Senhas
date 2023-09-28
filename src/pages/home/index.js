@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { StyleSheet, Text, View, Image, TouchableOpacity, Modal } from 'react-native';
+import { Text, View, Image, TouchableOpacity, Modal } from 'react-native';
 import Slider from '@react-native-community/slider'
 import { ModalPassword } from '../../components/modal'
 import styles from '../../estilos/styles';
@@ -26,7 +26,6 @@ export function Home() {
             <Image
                 source={require("../../assets/padlock.png")}
                 style={styles.logo}
-
             />
             <Text style={styles.titleG}> Senha de {size} caracteres </Text>
 
@@ -40,7 +39,6 @@ export function Home() {
                     thumbTintColor="#000"
                     value={size}
                     onValueChange={(value) => setSize(value.toFixed(0))}
-
                 />
 
             </View>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { TextInput, Text, View, TouchableOpacity, ScrollView, Alert, Pressable } from 'react-native';
+import { TextInput, Text, View, TouchableOpacity, ScrollView, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Clipboard from 'expo-clipboard'
 
@@ -120,8 +120,6 @@ export function List(index) {
                 </ScrollView>
 
             </View>
-
-
         </View >
     );
 }
