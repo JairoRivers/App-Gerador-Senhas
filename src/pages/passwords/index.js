@@ -3,6 +3,7 @@ import { View, Text, FlatList, TouchableOpacity, Alert } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { useIsFocused } from '@react-navigation/native'
 import useStorage from '../../hocks/useStorage'
+import { Ionicons } from '@expo/vector-icons'
 import styles from '../../estilos/styles'
 
 import { PasswordItem } from './components/passwordItem'
@@ -51,14 +52,19 @@ export function Passwords() {
                 </TouchableOpacity>
 
                 {isVisible && (
-                    <FlatList
-                        style={{ flex: 1, paddingTop: 14 }}
-                        data={listaPasswords}
-                        keyExtractor={(item) => String(item)}
-                        renderItem={({ item }) => <PasswordItem data={item} removePassword={() => hadleDeletePassword(item)} />}
-                    />
+                    <View style={{ flex: 1 }}>
+                        <FlatList
+                            style={{ flex: 1, paddingTop: 14 }}
+                            data={listaPasswords}
+                            keyExtractor={(item) => String(item)}
+                            renderItem={({ item }) => (
+                                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                                    <PasswordItem data={item} removePassword={() => hadleDeletePassword(item)} />
+                                </View>
+                            )}
+                        />
+                    </View>
                 )}
-
             </View>
         </SafeAreaView>
     )

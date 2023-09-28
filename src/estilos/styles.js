@@ -118,13 +118,13 @@ const styles = StyleSheet.create({
         flex: 3,
         alignItems: 'center',
         marginRight: 15,
-        marginLeft: 30
+        marginLeft: 30,
+
     },
     itens: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginRight: 200,
-        marginLeft: 0
+        marginRight: 200
     },
     textList: {
         fontSize: 16,
