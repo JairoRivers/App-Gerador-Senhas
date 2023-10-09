@@ -13,15 +13,6 @@ const styles = StyleSheet.create({
     pages: {
         flex: 1
     },
-    logoInicial: {
-        width: 200,
-        height: 200,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginLeft: 80,
-        marginTop: 150,
-        marginBottom: -130
-    },
     logins: {
         flex: 1,
         justifyContent: 'center',
@@ -49,7 +40,7 @@ const styles = StyleSheet.create({
 
     //Tela de geração de senhas
     container: {
-        flex: 1, // Tentar preecher a tela
+        flex: 1,
         backgroundColor: '#FFF',
         alignItems: 'center',
         justifyContent: 'center',
