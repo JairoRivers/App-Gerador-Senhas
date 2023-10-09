@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
         marginTop: -30,
         textAlign: "center"
     },
-    // Tela de Login
+    // Tela de Inicial / Login
     pages: {
         flex: 1
     },
