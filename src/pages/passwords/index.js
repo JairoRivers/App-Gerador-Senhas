@@ -51,12 +51,12 @@ export function Passwords() {
 
                 {isVisible && (
                     <View style={{ flex: 1 }}>
-                        <FlatList
+                        < FlatList
                             style={{ flex: 1, paddingTop: 14 }}
                             data={listaPasswords}
                             keyExtractor={(item) => String(item)}
                             renderItem={({ item }) => (
-                                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: "center" }}>
                                     <PasswordItem data={item} removePassword={() => hadleDeletePassword(item)} />
                                 </View>
                             )}
@@ -64,6 +64,6 @@ export function Passwords() {
                     </View>
                 )}
             </View>
-        </SafeAreaView>
+        </SafeAreaView >
     )
 }

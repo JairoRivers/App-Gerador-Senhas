@@ -26,17 +26,17 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        height: 100
+        height: 150
     },
     loginText: {
         marginBottom: 20,
         padding: 10,
-        width: 200,
+        width: 250,
         borderWidth: 1,
     },
     buttonEntrar: {
         backgroundColor: "#000",
-        width: 200,
+        width: 250,
         height: 50,
         alignItems: "center",
         justifyContent: "center",
@@ -159,7 +159,6 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         borderRadius: 8,
         marginTop: 10,
-
     },
     bottonText: {
         fontSize: 18,
