@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { View, StyleSheet, TextInput, TouchableOpacity, Text, Image, Animated, Keyboard } from 'react-native';
+import { View, TextInput, TouchableOpacity, Text, Animated, Keyboard } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native'
 import { Routes } from './src/routes'
 import styles from './src/estilos/styles';
